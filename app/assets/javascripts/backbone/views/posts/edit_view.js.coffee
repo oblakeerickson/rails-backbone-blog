@@ -1,4 +1,4 @@
-class Blog.view.PostsEditView extends Backbone.View
+class Blog.Views.PostsEditView extends Backbone.View
 
   template: JST["backbone/templates/posts/edit"]
 

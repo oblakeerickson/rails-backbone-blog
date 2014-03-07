@@ -4,23 +4,23 @@ class Blog.Routers.PostsRouter extends Backbone.Router
     @posts = new Blog.Collections.PostsCollection()
     @posts.reset options.posts
 
-    routes:
-      "index"    : "index"
-      "new"      : "newPost"
-      ":id"      : "show"
-      ":id/edit" : "edit"
-      ".*"       : "index"
+  routes:
+    "index"    : "index"
+    "new"      : "newPost"
+    ":id"      : "show"
+    ":id/edit" : "edit"
+    ".*"       : "index"
 
-    index: ->
-      @view = new Blog.Views.PostsIndexView({collection: @posts})
+  index: ->
+    @view = new Blog.Views.PostsIndexView({collection: @posts})
 
-    newPost: ->
-      @view = new Blog.Views.PostsNewView({collection: @posts})
+  newPost: ->
+    @view = new Blog.Views.PostsNewView({collection: @posts})
 
-    show: (id) ->
-      post = @posts.get(id)
-      @view = new Blog.Views.PostsShowView({model: post})
+  show: (id) ->
+    post = @posts.get(id)
+    @view = new Blog.Views.PostsShowView({model: post})
 
-    edit: (id) ->
-      post = @post.get(id)
-      @view = new Blog.Views.PostsEditView({model: post})
+  edit: (id) ->
+    post = @post.get(id)
+    @view = new Blog.Views.PostsEditView({model: post})

@@ -8,11 +8,11 @@ class Blog.Views.PostsIndexView extends Backbone.View
     @render()
     @addAll()
 
-  addALL: ->
+  addAll: ->
     @collection.forEach(@addOne, @)
 
   addOne: (model) ->
-    @view = new BackboneTest.Views.PostView({model: model})
+    @view = new Blog.Views.PostView({model: model})
     @$el.find('tbody').append @view.render().el
 
   render: ->
